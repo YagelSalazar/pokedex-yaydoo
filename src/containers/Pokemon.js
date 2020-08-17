@@ -22,29 +22,29 @@ const Pokemon = (props) => {
                     <img src={pokeData.sprites.back_default} alt="" />
                     <img src={pokeData.sprites.front_shiny} alt="" />
                     <img src={pokeData.sprites.back_shiny} alt="" />
-                    <div>
-                        <div>
-                            <h1>Height</h1>
+                    <div className="data-desc">
+                        <div className="characteristic">
+                            <h2>Height</h2>
                             <p>{`${pokeData.height} ft`}</p>
                         </div>
-                        <div>
-                            <h1>Weight</h1>
+                        <div className="characteristic">
+                            <h2>Weight</h2>
                             <p>{`${pokeData.weight} lb`}</p>
                         </div>
-                        <div>
-                            <h1>Type</h1>
+                        <div className="characteristic">
+                            <h2>Type</h2>
                             {pokeData.types.map(el => {
                                 return <p>{el.type.name}</p>
                             })}
                         </div>
-                        <div>
-                            <h1>Stats</h1>
+                        <div className="characteristic">
+                            <h2>Stats</h2>
                             {pokeData.stats.map(el => {
                                 return <p>{el.stat.name} {el.base_stat}</p>
                             })}
                         </div>
-                        <div>
-                            <h1>Abilities</h1>
+                        <div className="characteristic">
+                            <h2>Abilities</h2>
                             {pokeData.abilities.map(el => {
                                 return <p>{el.ability.name}</p>
                             })}

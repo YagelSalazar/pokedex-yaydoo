@@ -3,7 +3,7 @@
     border-radius: 20px;
     width: 20%;
     height: 100px;
-    margin: 16px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,4 +48,25 @@
     justify-content: center;
     align-items: center;
     border: solid 2px beige;
+}
+
+.input-search {
+    width: 50%;
+    height: 30px;
+    border-radius: 15px 0 0 15px;
+    padding: 0 30px;
+}
+
+.btn-search {
+    height: 30px;
+    border-radius: 0 15px 15px 0;
+    padding: 0 30px;
+    background-color: rgb(84, 131, 192);
+    color: beige;
+    font-weight: bold;
+}
+
+.btn-search:hover {
+    background-color: #fff;
+    color: black;
 }

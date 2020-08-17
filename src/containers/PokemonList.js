@@ -42,9 +42,8 @@ const PokemonList = (props) => {
     return (
         <div className="container-layout">
             <div>
-                <p>Search</p>
-                <input type='text' onChange={e => setSearch(e.target.value)} />
-                <button onClick={() => props.history.push(`/pokemon/${search}`)}>Search</button>
+                <input className="input-search" placeholder="Pokemon name" type='text' onChange={e => setSearch(e.target.value)} />
+                <button className="btn-search" onClick={() => props.history.push(`/pokemon/${search}`)}>Search Pokemon</button>
             </div>
             <div className="pokemon-container">
             {ShowData()}

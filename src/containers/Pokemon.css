@@ -1,7 +1,17 @@
 .detail-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
     padding: 30px;
+}
+
+.data-desc {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.characteristic {
+    width: 30%;
+    margin: 20px;
 }
