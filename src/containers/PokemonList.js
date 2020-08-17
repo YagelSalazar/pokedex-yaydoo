@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { GetPokemonList } from '../actions/pokemonActions';
 import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
+import './PokemonList.css'
 
 const PokemonList = (props) => {
     const [search, setSearch] = useState("");
@@ -24,7 +25,7 @@ const PokemonList = (props) => {
 
         if (!_.isEmpty(pokemonList.data)) {
             return pokemonList.data.map(e => (
-                <div>
+                <div className="pokemon-card">
                     <p>{e.name}</p>
                     <Link to={`/pokemon/${e.name}`}>View</Link>
                 </div>
@@ -39,13 +40,15 @@ const PokemonList = (props) => {
     }
 
     return (
-        <div>
+        <div className="container-layout">
             <div>
                 <p>Search</p>
                 <input type='text' onChange={e => setSearch(e.target.value)} />
                 <button onClick={() => props.history.push(`/pokemon/${search}`)}>Search</button>
             </div>
+            <div className="pokemon-container">
             {ShowData()}
+            </div>
             {!_.isEmpty(pokemonList.data) && (
                 <ReactPaginate
                     pageCount={Math.ceil(pokemonList.count / 20)}
@@ -53,6 +56,7 @@ const PokemonList = (props) => {
                     marginPagesDisplayed={1}
                     onPageChange={(data) => FetchData(data.selected + 1)}
                     containerClassName='pagination'
+                    pageClassName="selected-pg"
                 />
             )}
         </div>

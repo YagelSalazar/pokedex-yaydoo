@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetPokemon } from "../actions/pokemonActions";
 import _ from "lodash";
+import './Pokemon.css'
 
 const Pokemon = (props) => {
     const pokemonName = props.match.params.pokemon;
@@ -22,16 +23,32 @@ const Pokemon = (props) => {
                     <img src={pokeData.sprites.front_shiny} alt="" />
                     <img src={pokeData.sprites.back_shiny} alt="" />
                     <div>
-                        <h1>Stats</h1>
-                        {pokeData.stats.map(el => {
-                            return <p>{el.stat.name} {el.base_stat}</p>
-                        })}
-                    </div>
-                    <div>
-                        <h1>Abilities</h1>
-                        {pokeData.abilities.map(el => {
-                            return <p>{el.ability.name}</p>
-                        })}
+                        <div>
+                            <h1>Height</h1>
+                            <p>{`${pokeData.height} ft`}</p>
+                        </div>
+                        <div>
+                            <h1>Weight</h1>
+                            <p>{`${pokeData.weight} lb`}</p>
+                        </div>
+                        <div>
+                            <h1>Type</h1>
+                            {pokeData.types.map(el => {
+                                return <p>{el.type.name}</p>
+                            })}
+                        </div>
+                        <div>
+                            <h1>Stats</h1>
+                            {pokeData.stats.map(el => {
+                                return <p>{el.stat.name} {el.base_stat}</p>
+                            })}
+                        </div>
+                        <div>
+                            <h1>Abilities</h1>
+                            {pokeData.abilities.map(el => {
+                                return <p>{el.ability.name}</p>
+                            })}
+                        </div>
                     </div>
                 </div>
             )
@@ -49,8 +66,8 @@ const Pokemon = (props) => {
     }
 
     return (
-        <div>
-            <div>{pokemonName}</div>
+        <div className="detail-container">
+            <h1>{pokemonName}</h1>
             {ShowData()}
         </div>
     )

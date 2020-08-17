@@ -1,0 +1,51 @@
+.pokemon-card {
+    border: solid 1px #000;
+    border-radius: 20px;
+    width: 20%;
+    height: 100px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.container-layout {
+    padding: 16px 10%;
+    position: relative;
+    height: 92.7vh;
+    box-sizing: border-box;
+}
+
+.pagination {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    list-style: none;
+    background-color: rgb(84, 131, 192);
+    align-items: center;
+    padding: 0 20px;
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: beige;
+    font-weight: bold;
+}
+
+.selected-pg {
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px beige;
+}
